@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:UptechSol"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <BitmapImage x:Key="bgMain" UriSource="assets\bg_Main.jpg" BaseUri="/bg_Main.jpg"></BitmapImage>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
