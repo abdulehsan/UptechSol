@@ -30,5 +30,12 @@ namespace UptechSol
             this.Close();
             main.Show();
         }
+
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainwindpw = new MainWindow();
+            mainwindpw.Show();
+            this.Close();
+        }
     }
 }

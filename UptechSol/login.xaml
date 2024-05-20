@@ -19,36 +19,38 @@
 
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBlock Text="Signin to your account" 
-                               VerticalAlignment="Bottom" HorizontalAlignment="Center"  Foreground="White" FontSize="30px" FontFamily="Arial" />
+                               VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="White" FontSize="30px" FontFamily="Arial" />
                 </Grid>
                 <Grid Grid.Row="1">
                     <TextBlock Text="Enter your email" 
-VerticalAlignment="Top" HorizontalAlignment="Left"  Foreground="White" FontSize="15px" FontFamily="Arial" Margin="125,10,0,0"  />
-
-
-                    <TextBox Width="250" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Center" 
-                             MaxWidth="300" MaxHeight="50"/>
-                </Grid>
-
+VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="White" FontSize="15px" FontFamily="Arial" Margin="125,0,0,0"  />
+                   </Grid>
                 <Grid Grid.Row="2">
-                    <TextBlock Text="Enter your password" 
-           VerticalAlignment="Top" HorizontalAlignment="Left"  Foreground="White" FontSize="15px" FontFamily="Arial" Margin="125,10,0,0"  />
-
-                    <TextBox Width="250" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Center" 
-         MaxWidth="300" MaxHeight="50"/>
-
+                    <TextBox Width="250" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                             MaxWidth="300" MaxHeight="50" FontSize="20" Padding="8"/>
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Button x:Name="btnLogin" Content="Login" Width="150" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20" Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101" Margin="0,35,0,0">
+                    <TextBlock Text="Enter your email" 
+VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="White" FontSize="15px" FontFamily="Arial" Margin="125,10,0,0"  />
+                </Grid>
+                <Grid Grid.Row="4">
+                    <TextBox Width="250" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                             MaxWidth="300" MaxHeight="50" FontSize="20" Padding="8"/>
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Button x:Name="btnLogin" Content="Login" Width="150" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20" Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101" Margin="0,0,0,0">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="25"/>
@@ -57,12 +59,27 @@ VerticalAlignment="Top" HorizontalAlignment="Left"  Foreground="White" FontSize=
                     </Button>
 
                 </Grid>
-                <Grid Grid.Row="4"></Grid>
-                <Grid Grid.Row="5">
+                
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="forgot password?" 
+VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="White" FontSize="15px" FontFamily="Arial"  Margin="0,0,10,0" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBlock Text="SignUp" 
+VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="White" FontSize="15px" FontFamily="Arial" Margin="30,0,0,0" PreviewMouseDown="TextBlock_PreviewMouseDown" />
+
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="7">
                     <Button x:Name="btnBackToMain" Content="Back to Main" Width="150" Height="50"
-                        VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20"
                         Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101"
-                        Margin="0,0,0,10" Click="btnBackToMain_Click" >
+                        Margin="0,0,0,0" Click="btnBackToMain_Click" >
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="25"/>
