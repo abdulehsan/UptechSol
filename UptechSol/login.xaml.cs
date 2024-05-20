@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -6,26 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace UptechSol
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class login : Window
     {
-        public MainWindow()
+        public login()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void btnBackToMain_Click(object sender, RoutedEventArgs e)
         {
-            login loginwindpw = new login();
-            loginwindpw.Show();
+            MainWindow main = new MainWindow();
             this.Close();
+            main.Show();
         }
     }
 }

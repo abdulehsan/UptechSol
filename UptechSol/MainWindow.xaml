@@ -22,7 +22,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,70" Foreground="White" FontSize="20px" Opacity="0.75" >
-                    Signup to a new account
+            Signup to a new account
                 </TextBlock>
                 <Button  Content="SignUp" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20" Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101" Margin="0,0,0,10" >
                     <Button.Resources>
@@ -35,9 +35,9 @@
             </Grid>
             <Grid Grid.Row="1">
                 <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0" Foreground="White" FontSize="20px" Opacity="0.75" >
-                    Login to your account
+            Login to your account
                 </TextBlock>
-                <Button Grid.Row="1" Content="Login" Width="150" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20" Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101" Margin="0,35,0,0">
+                <Button x:Name="btnLogin" Grid.Row="1" Content="Login" Width="150" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20" Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101" Margin="0,35,0,0" Click="btnLogin_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -46,7 +46,7 @@
                 </Button>
 
             </Grid>
-            
+
         </Grid>
     </Grid>
 </Window>
