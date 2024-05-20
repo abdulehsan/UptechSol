@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="UptechSol.view.userControls.txtbox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UptechSol.view.userControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="250">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="215"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/assets/bg_Main.jpg"  HorizontalAlignment="Center" Width="36" Margin="0,8,0,8"/>
+        <TextBox Grid.Column="1" x:Name="txtInput" VerticalAlignment="Center" FontSize="16" FontWeight="Light" Height="24"/>
+    </Grid>
+</UserControl>
