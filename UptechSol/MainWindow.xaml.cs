@@ -39,6 +39,7 @@ namespace UptechSol
         {
             this.Close();
         }
+        /*
         private bool IsMaximize = false;
         
          private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -48,21 +49,20 @@ namespace UptechSol
                  if (IsMaximize)
                  {
                      this.WindowState = WindowState.Normal;
-                     this.Width = 1080;
-                     this.Height = 720;
+                     this.Width = 300;
+                     this.Height = 300;
 
                      IsMaximize = false;
                  }
                  else
                  {
-                     this.WindowState = WindowState.Maximized;
+                     this.WindowState = WindowState.Normal;
 
                      IsMaximize = true;
                  }
              }
          }
-        
-        
+        */
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)

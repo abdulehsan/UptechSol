@@ -8,8 +8,7 @@
                WindowStartupLocation="CenterScreen" AllowsTransparency="True"
 Background="Transparent" WindowStyle="None">
 
-    <Border Style="{StaticResource BorderStyle}" MouseDown="Border_MouseDown"
-MouseLeftButtonDown="Border_MouseLeftButtonDown">
+    <Border Style="{StaticResource BorderStyle}" MouseDown="Border_MouseDown">
         <StackPanel Orientation="Vertical"
                     Margin="20">
             <Grid>
@@ -33,7 +32,7 @@ MouseLeftButtonDown="Border_MouseLeftButtonDown">
                 <TextBox  Grid.Column="1" 
                   Grid.Row="1"
                           x:Name="idTxtBox"
-                  Text="001"        
+                  Text="admin"        
                   Style="{StaticResource LoginTextBox}"/>
                 <TextBlock Text="Password" 
                    Grid.Row="2"

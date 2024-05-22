@@ -171,6 +171,38 @@
                 <Setter Property="Height" Value="15" />
             </Style>
 
+            <Style x:Key="delButton" TargetType="Button">
+                <Setter Property="Background" Value="#070F2B" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="Height" Value="35" />
+                <Setter Property="Margin" Value="15 3" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="Template" >
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="7">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#7B5CD6" />
+                        <Setter Property="Foreground" Value="#ffffff" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+            <Style x:Key="delButtonIcon" TargetType="Icon:PackIconMaterial">
+                <Setter Property="Margin" Value="20 2 20 0" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Width" Value="15" />
+                <Setter Property="Height" Value="15" />
+            </Style>
 
             <Style x:Key="searchTextbox" TargetType="TextBox">
                 <Setter Property="Background" Value="#ffffff" />
@@ -206,8 +238,41 @@
                 </Setter>
             </Style>
 
-
             <Style x:Key="addButton" TargetType="Button">
+                <Setter Property="Background" Value="#070F2B" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="Height" Value="35" />
+                <Setter Property="Margin" Value="15 3" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="Template" >
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="7">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#7B5CD6" />
+                        <Setter Property="Foreground" Value="#ffffff" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+            <Style x:Key="addButtonIconn" TargetType="Icon:PackIconMaterial">
+                <Setter Property="Margin" Value="20 2 20 0" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Width" Value="15" />
+                <Setter Property="Height" Value="15" />
+            </Style>
+
+
+            <Style x:Key="addButtoon" TargetType="Button">
                 <Setter Property="Background" Value="#6741D9" />
                 <Setter Property="Foreground" Value="#ffffff" />
                 <Setter Property="FocusVisualStyle" Value="{x:Null}" />

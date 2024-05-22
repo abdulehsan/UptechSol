@@ -26,9 +26,9 @@ namespace UptechSol
             dt.Load(cmd.ExecuteReader());
 
             conn.Close();
-            //dtgrid.DataContext = dt;
+            membersDataGrid.DataContext = dt;
         }
-
+        /*
         private bool IsMaximize = false;
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -51,7 +51,7 @@ namespace UptechSol
                 }
             }
         }
-
+        */
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -61,5 +61,25 @@ namespace UptechSol
             }
         }
 
+        private void logoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        bool menuVisibility = true;
+        private void menuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuVisibility)
+            {
+                tryy.Visibility = Visibility.Collapsed;
+                menuVisibility = false;
+                //menu.Height = new GridLength(0);
+            }
+            else
+            {
+                //   menu.Height = new GridLength(1);
+                tryy.Visibility = Visibility.Visible;
+                menuVisibility = true;
+            }
+        }
     }
     }
