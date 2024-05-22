@@ -20,11 +20,59 @@ namespace UptechSol
         {
             InitializeComponent();
         }
-
+        
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            login loginwindpw = new login();
-            loginwindpw.Show();
+            if((idTxtBox.Text == "admin")&&(passTxtBox.Password =="admin"))
+            {
+                adminDashboard adminDashboardWindow = new adminDashboard();
+                adminDashboardWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong Password or ID");
+            }
+
+            }
+        private void closeWindowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private bool IsMaximize = false;
+        
+         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+         {
+             if (e.ClickCount == 2)
+             {
+                 if (IsMaximize)
+                 {
+                     this.WindowState = WindowState.Normal;
+                     this.Width = 1080;
+                     this.Height = 720;
+
+                     IsMaximize = false;
+                 }
+                 else
+                 {
+                     this.WindowState = WindowState.Maximized;
+
+                     IsMaximize = true;
+                 }
+             }
+         }
+        
+        
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void closeBtn_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

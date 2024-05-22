@@ -4,49 +4,52 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UptechSol"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1300">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <Image Source="/assets/bg_Main.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        </Grid>
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+               WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+Background="Transparent" WindowStyle="None">
 
-        <Grid Grid.Column="1" Background="#FF247BB3">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,70" Foreground="White" FontSize="20px" Opacity="0.75" FontFamily="Arial" >
-            Signup to a new account
-                </TextBlock>
-                <Button  Content="SignUp" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20" Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101" Margin="0,0,0,10" >
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="25"/>
-                        </Style>
-                    </Button.Resources>
+    <Border Style="{StaticResource BorderStyle}" MouseDown="Border_MouseDown"
+MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <StackPanel Orientation="Vertical"
+                    Margin="20">
+            <Grid>
+            <TextBlock Text="Login" 
+                       Style="{StaticResource LoginTextBlock}"/>
+                <Button x:Name="closeBtn" Style="{StaticResource topButton}" HorizontalAlignment="Right" Margin="0 10 0 10" Click="closeBtn_Click">
+                    <Icon:PackIconMaterial Kind="Close" Width="15" Height="15" />
                 </Button>
-
             </Grid>
-            <Grid Grid.Row="1">
-                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0" Foreground="White" FontSize="20px" Opacity="0.75" FontFamily="Arial" >
-            Login to your account
-                </TextBlock>
-                <Button x:Name="btnLogin" Grid.Row="1" Content="Login" Width="150" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Arial" FontSize="20" Background="#FFB6DFFF" BorderThickness="2,2,2,2" BorderBrush="#FF0E0101" Margin="0,35,0,0" Click="btnLogin_Click">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="25"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="ID " 
+                    Grid.Row="0"
+                    Style="{StaticResource DefaultTextBlock}"/>
+                <TextBox  Grid.Column="1" 
+                  Grid.Row="1"
+                          x:Name="idTxtBox"
+                  Text="001"        
+                  Style="{StaticResource LoginTextBox}"/>
+                <TextBlock Text="Password" 
+                   Grid.Row="2"
+                   Style="{StaticResource DefaultTextBlock}"/>
+                
+                
+                <PasswordBox Grid.Row="3"
+                             x:Name="passTxtBox"
+                      Password="admin"
+                      Style="{StaticResource LoginPasswordBox}"/>
             </Grid>
+            
+            <Button x:Name="loginBtn" 
+                    Style="{StaticResource LoginButtonStyle}" Click="btnLogin_Click"/>
+            
+        </StackPanel>
+    </Border>
 
-        </Grid>
-    </Grid>
 </Window>
