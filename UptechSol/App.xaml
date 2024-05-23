@@ -157,8 +157,8 @@
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#7B5CD6" />
-                        <Setter Property="Foreground" Value="#ffffff" />
+                        <Setter Property="Background" Value="#0094EF" />
+                        <Setter Property="Foreground" Value="White" />
                     </Trigger>
                 </Style.Triggers>
             </Style>
@@ -190,7 +190,7 @@
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#7B5CD6" />
+                        <Setter Property="Background" Value="#0094EF" />
                         <Setter Property="Foreground" Value="#ffffff" />
                     </Trigger>
                 </Style.Triggers>
@@ -257,7 +257,7 @@
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#7B5CD6" />
+                        <Setter Property="Background" Value="#0094EF" />
                         <Setter Property="Foreground" Value="#ffffff" />
                     </Trigger>
                 </Style.Triggers>

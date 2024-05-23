@@ -1,19 +1,27 @@
-﻿using System.Collections.ObjectModel;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using MySql;
-using MySql.Data.MySqlClient;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace UptechSol
 {
     /// <summary>
-    /// Interaction logic for adminDashboard.xaml
+    /// Interaction logic for adminProject.xaml
     /// </summary>
-    public partial class adminDashboard : Window
+    public partial class adminProject : Window
     {
-        public adminDashboard()
+        public adminProject()
         {
             InitializeComponent();
             string connStr = "server=localhost;user=root;database=sakila;port=3306;password=qwerty@123";
@@ -81,14 +89,7 @@ namespace UptechSol
                 menuVisibility = true;
             }
         }
-
-        private void projectWindowBtn_Click(object sender, RoutedEventArgs e)
-        {
-            adminProject projectWindow = new adminProject();
-            projectWindow.Show();
-            this.Close();
-        }
-
+        
         private void clientWindowBtn_Click(object sender, RoutedEventArgs e)
         {
             adminClient clientWindow = new adminClient();
@@ -109,5 +110,12 @@ namespace UptechSol
             attendenceWindow.Show();
             this.Close();
         }
+
+        private void dashboardWindowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            adminDashboard dashboardWindow = new adminDashboard();
+            dashboardWindow.Show();
+            this.Close();
+        }
     }
-    }
+}

@@ -1,22 +1,29 @@
-﻿using System.Collections.ObjectModel;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using MySql;
-using MySql.Data.MySqlClient;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace UptechSol
 {
     /// <summary>
-    /// Interaction logic for adminDashboard.xaml
+    /// Interaction logic for adminFinance.xaml
     /// </summary>
-    public partial class adminDashboard : Window
+    public partial class adminFinance : Window
     {
-        public adminDashboard()
+        public adminFinance()
         {
-            InitializeComponent();
-            string connStr = "server=localhost;user=root;database=sakila;port=3306;password=qwerty@123";
+            InitializeComponent(); string connStr = "server=localhost;user=root;database=sakila;port=3306;password=qwerty@123";
             MySqlConnection conn = new MySqlConnection(connStr);
 
             conn.Open();
@@ -96,12 +103,7 @@ namespace UptechSol
             this.Close();
         }
 
-        private void financeWindowBtn_Click(object sender, RoutedEventArgs e)
-        {
-            adminFinance financeWindow = new adminFinance();
-            financeWindow.Show();
-            this.Close();
-        }
+        
 
         private void attendenceWindowBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -109,5 +111,11 @@ namespace UptechSol
             attendenceWindow.Show();
             this.Close();
         }
+        private void dashboardWindowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            adminDashboard dashboardWindow = new adminDashboard();
+            dashboardWindow.Show();
+            this.Close();
+        }
     }
-    }
+}
