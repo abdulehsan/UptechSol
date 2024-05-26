@@ -10,19 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UptechSol.view.userControls
+namespace UptechSol
 {
     /// <summary>
-    /// Interaction logic for txtbox.xaml
+    /// Interaction logic for FinanceAdd.xaml
     /// </summary>
-    public partial class txtbox : UserControl
+    public partial class FinanceAdd : Window
     {
-        public txtbox()
+        public FinanceAdd()
         {
             InitializeComponent();
+        }
+        private void closeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("added");
         }
     }
 }

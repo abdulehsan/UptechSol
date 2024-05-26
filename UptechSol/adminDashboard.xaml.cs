@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Data;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using MySql;
@@ -16,18 +17,20 @@ namespace UptechSol
         public adminDashboard()
         {
             InitializeComponent();
-            string connStr = "server=localhost;user=root;database=sakila;port=3306;password=qwerty@123";
+            string connStr = "server=localhost;user=root;database=uptechsol;port=3306;password=qwerty@123";
             MySqlConnection conn = new MySqlConnection(connStr);
 
             conn.Open();
-            string sql = "SELECT customer_id as ID,first_name as FirstName,last_name as LastName,email as Email from customer";
+            string sql = "SELECT e.idEmployee as ID,e.Name,e.Gender,e.DOJ as JoinngDate,e.DOB as Birthday,e.Address,f.Salary,d.D_name AS Department FROM Employee e INNER JOIN Finance f ON e.idEmployee = f.Employee_idEmployee INNER JOIN Department d ON e.idEmployee = d.Employee_idEmployee;\r\n";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
 
             conn.Close();
             membersDataGrid.DataContext = dt;
+            
         }
+        
         /*
         private bool IsMaximize = false;
 
@@ -64,6 +67,7 @@ namespace UptechSol
         private void logoutBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            
         }
         bool menuVisibility = true;
         private void menuBtn_Click(object sender, RoutedEventArgs e)
@@ -108,6 +112,12 @@ namespace UptechSol
             adminAttendence attendenceWindow = new adminAttendence();
             attendenceWindow.Show();
             this.Close();
+        }
+
+        private void empAddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            employeeAdd addemployeeform = new employeeAdd();
+            addemployeeform.Show();
         }
     }
     }

@@ -116,5 +116,11 @@ namespace UptechSol
             dashboardWindow.Show();
             this.Close();
         }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AttendenceAdd attendencewindow = new AttendenceAdd();
+            attendencewindow.Show();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using MySql.Data.MySqlClient;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,15 +21,52 @@ namespace UptechSol
         {
             InitializeComponent();
         }
-        
+
+
+        private bool AuthenticateUser(string id, string password)
+        {
+            bool isAuthenticated = false;
+            string connectionString = "server=localhost;user=root;database=sakila;port=3306;password=qwerty@123"; // Replace with your actual connection string
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT 1 FROM customer WHERE customer_id = @Id AND first_name = @Password LIMIT 1"; // Replace with your actual query
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@Password", password);
+
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    isAuthenticated = true;
+                }
+            }
+
+            return isAuthenticated;
+        }
+
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if((idTxtBox.Text == "admin")&&(passTxtBox.Password =="admin"))
+            string id = idTxtBox.Text;
+            string password = passTxtBox.Password;           
+           
+            
+            if((id == "admin")&&(password =="admin"))
             {
                 adminDashboard adminDashboardWindow = new adminDashboard();
                 adminDashboardWindow.Show();
                 this.Close();
             }
+
+            else if (AuthenticateUser(id, password))
+            {
+                adminDashboard adminDashboardWindow = new adminDashboard();
+                adminDashboardWindow.Show();
+                this.Close();
+            }
+
+
             else
             {
                 MessageBox.Show("Wrong Password or ID");

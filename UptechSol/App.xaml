@@ -37,14 +37,14 @@
                 <Setter Property="Width" Value="250"/>
                 <Setter Property="Padding" Value="0,5"/>
                 <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                
+
             </Style>
             <Style x:Key="LoginPasswordBox" TargetType="PasswordBox">
                 <Setter Property="HorizontalAlignment" Value="Left"/>
                 <Setter Property="Width" Value="250"/>
                 <Setter Property="Padding" Value="0,5"/>
                 <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            </Style>
+                            </Style>
 
             <!--TextBlockStyle.xaml-->
             <Style x:Key="DefaultTextBlock" TargetType="TextBlock">
@@ -522,7 +522,7 @@
             </Style>
 
             <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">
-                <Setter Property="Margin" Value="0 4 0 0" />
+                <Setter Property="Margin" Value="0 5 0 0" />
                 <Setter Property="Background" Value="#FFFFFF"/>
                 <Setter Property="SnapsToDevicePixels" Value="true"/>
                 <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
@@ -557,7 +557,7 @@
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#623ED0"/>
+                        <Setter Property="Background" Value="#0094EF"/>
                         <Setter Property="Foreground" Value="#ffffff"/>
                     </Trigger>
                     <Trigger Property="IsSelected" Value="True">
@@ -607,7 +607,7 @@
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Foreground" Value="#69717D" />
-                <Setter Property="Margin" Value="15 0 15 10" />
+                <Setter Property="Margin" Value="10 0 10 10" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
@@ -698,10 +698,6 @@
                 </Setter>
             </Style>
             <!--#endregion-->
-
-
-
-
         </ResourceDictionary>
     </Application.Resources>
     

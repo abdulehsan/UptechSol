@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UptechSol"
                         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Height="720" Width="1080" WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+        Height="700" Width="1080" WindowStartupLocation="CenterScreen" AllowsTransparency="True"
 Background="Transparent" WindowStyle="None">
 
     <Window.Resources>
@@ -146,25 +146,12 @@ Background="Transparent" WindowStyle="None">
 
                 </DataGrid>
 
-                <!--Pagingation Section-->
-                <Border Grid.Row="3" HorizontalAlignment="Center" BorderBrush="#DEE4EC" BorderThickness="1" CornerRadius="5" Padding="5" Background="#ffffff" Margin="0 10 10 10">
+                <Button x:Name="AddBtn"  Style="{StaticResource addButton}" Width="175" Margin="10,10,10,10" Grid.Row="3" Click="AddBtn_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Button Style="{StaticResource addButton}" Width="175" Margin="10,10,10,10">
-                            <StackPanel Orientation="Horizontal">
-                                <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource addButtonIconn}"/>
-                                <TextBlock Text="Add Employee"/>
-                            </StackPanel>
-                        </Button>
-                        <Button Style="{StaticResource delButton}" Margin="10,10,10,10" Width="175">
-                            <StackPanel Orientation="Horizontal">
-                                <Icon:PackIconMaterial Kind="Delete" Style="{StaticResource delButtonIcon}"/>
-                                <TextBlock Text="Delete Employee"/>
-                            </StackPanel>
-                        </Button>
-
-
+                        <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource addButtonIconn}"/>
+                        <TextBlock Text="Add Salary"/>
                     </StackPanel>
-                </Border>
+                </Button>
 
             </Grid>
 

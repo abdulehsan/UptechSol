@@ -1,0 +1,60 @@
+﻿<Window x:Class="UptechSol.employeeAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UptechSol"
+                xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+Background="Transparent" WindowStyle="None">
+    <Border  Style="{StaticResource BorderStyle}" Width="350" Height="510">
+        <StackPanel Orientation="Vertical" Margin="20">
+            <Grid>
+                <TextBlock Text="Add Employee" 
+           Style="{StaticResource LoginTextBlock}"/>
+                <Button x:Name="closeBtn" Style="{StaticResource topButton}" HorizontalAlignment="Right" Margin="0 10 0 10" Click="closeBtn_Click">
+                    <Icon:PackIconMaterial Kind="Close" Width="15" Height="15" />
+                </Button>
+            </Grid>
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Name:  " Grid.Row="0" Style="{StaticResource DefaultTextBlock}"/>
+                <TextBox  Grid.Column="1" Grid.Row="1" x:Name="nameTxtBox" Text="John" Style="{StaticResource LoginTextBox}"/>
+                <TextBlock Text="Gender" Grid.Row="2" Style="{StaticResource DefaultTextBlock}"/>
+                <ComboBox x:Name="genderBox" Grid.Row="3">
+                    <ComboBoxItem Content="Male"/>
+                    <ComboBoxItem Content="Female"/>
+                </ComboBox>
+                <TextBlock Text="Birthday" Grid.Row="4" Style="{StaticResource DefaultTextBlock}"/>
+                <DatePicker Grid.Row="5" x:Name="bdate"/>
+                <TextBlock Text="Join Date" Grid.Row="6" Style="{StaticResource DefaultTextBlock}"/>
+                <DatePicker Grid.Row="7" x:Name="joindate" />
+                <TextBlock Text="Address" Grid.Row="8" Style="{StaticResource DefaultTextBlock}"/>
+                <TextBox  Grid.Row="9" x:Name="addressTxtBox" Text="Islamabad" Style="{StaticResource LoginTextBox}"/>
+
+            </Grid>
+
+            <Button x:Name="empAddBtn"  Style="{StaticResource addButton}" Width="175" Margin="10,20,10,10" Click="empAddBtn_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource addButtonIconn}"/>
+                    <TextBlock Text="Add Employee"/>
+                </StackPanel>
+            </Button>
+
+
+
+        </StackPanel>
+    </Border>
+</Window>

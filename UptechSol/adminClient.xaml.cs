@@ -24,11 +24,11 @@ namespace UptechSol
         public adminClient()
         {
             InitializeComponent();
-            string connStr = "server=localhost;user=root;database=sakila;port=3306;password=qwerty@123";
+            string connStr = "server=localhost;user=root;database=uptechsol;port=3306;password=qwerty@123";
             MySqlConnection conn = new MySqlConnection(connStr);
 
             conn.Open();
-            string sql = "SELECT customer_id as ID,first_name as FirstName,last_name as LastName,email as Email from customer";
+            string sql = "SELECT c.C_id AS ClientID,c.C_name AS ClientName,p.P_name AS ProjectName,p.Budget FROM Client c INNER JOIN Project p ON c.C_id = p.Client_C_id;\r\n";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
@@ -118,6 +118,12 @@ namespace UptechSol
             adminDashboard dashboardWindow = new adminDashboard();
             dashboardWindow.Show();
             this.Close();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            clientadd clientaddwindow = new clientadd();
+            clientaddwindow.Show(); 
         }
     }
 }
