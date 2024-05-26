@@ -1,5 +1,6 @@
 ﻿using MySql;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,26 +33,42 @@ namespace UptechSol
 
         private void empAddBtn_Click(object sender, RoutedEventArgs e)
         {
-            string Datee = bdate.SelectedDate.Value.Date.ToString("yyyy-MM-dd");
-            MessageBox.Show(Datee);
-                string connStr = "server=localhost;user=root;database=demodb;password=qwerty@123";
+            string bDatee = bdate.SelectedDate.Value.Date.ToString("yyyy-MM-dd");
+            string ID = idTxtBox.Text;
+            int empID = int.Parse(ID);
+            string jDatee = bdate.SelectedDate.Value.Date.ToString("yyyy-MM-dd");
+            
             try {
+                string connStr = "server=localhost;user=root;database=demodb;password=qwerty@123";
                 MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
-                string sql = "INSERT INTO employee (emp_fname,emp_lname,emp_dob) VALUES (@fname,@lname,@dob)";
+                string sql = "INSERT INTO UptechSol.Employee (idEmployee, Name, Gender, DOJ, DOB, Address) VALUES (@ID,@name,@Gender,@doj,@dob,@address)";
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@fname", nameTxtBox.Text);
-                    cmd.Parameters.AddWithValue("@lname", nameTxtBox.Text);
-                    cmd.Parameters.AddWithValue("@dob", Datee);
+                    cmd.Parameters.AddWithValue("@ID", empID);
+                    cmd.Parameters.AddWithValue("@name", nameTxtBox.Text);
+                    cmd.Parameters.AddWithValue("@Gender", genderBox.Text);
+                    cmd.Parameters.AddWithValue("@doj", jDatee);
+                    cmd.Parameters.AddWithValue("@dob", bDatee);
+                    cmd.Parameters.AddWithValue("@address", addressTxtBox.Text);
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                } }
+                    MessageBox.Show("Added");
+                    this.Close();
+                } 
+            }
             catch(Exception ex)
             {
                MessageBox.Show(ex.ToString());
             }
             }
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
     }
 }
         

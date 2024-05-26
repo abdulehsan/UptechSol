@@ -413,3 +413,51 @@ FROM
         INNER JOIN
     Project p ON c.C_id = p.Client_C_id;
 */
+
+/*
+SELECT 
+    p.P_no AS Project_ID,
+    p.P_name AS Project_Name,
+    p.Budget AS Project_Budget,
+    e.Name AS Employee_Name,
+    c.C_name AS Client_Name
+FROM
+    Project p
+        INNER JOIN
+    Employee_has_Project ep ON p.P_no = ep.Project_P_no
+        INNER JOIN
+    Employee e ON ep.Employee_idEmployee = e.idEmployee
+        INNER JOIN
+    Client c ON p.Client_C_id = c.C_id;
+*/
+/*
+
+SELECT 
+    e.idEmployee AS Employee_ID,
+    f.Salary AS Employee_Salary,
+    p.P_no AS Project_ID,
+    p.P_name AS Project_Name,
+    p.Budget AS Project_Budget
+FROM
+    Employee e
+        INNER JOIN
+    Finance f ON e.idEmployee = f.Employee_idEmployee
+        INNER JOIN
+    Employee_has_Project ep ON e.idEmployee = ep.Employee_idEmployee
+        INNER JOIN
+    Project p ON ep.Project_P_no = p.P_no;
+    
+    */
+    
+    /*
+    SELECT 
+    e.idEmployee AS EmployeeID,
+    e.Name AS EmployeeName,
+    a.Date AS AttendanceDate,
+    a.Status AS AttendanceStatus
+FROM
+    Employee e
+        INNER JOIN
+    Attendance a ON e.idEmployee = a.Employee_idEmployee;
+
+*/

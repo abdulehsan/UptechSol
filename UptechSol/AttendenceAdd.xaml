@@ -30,7 +30,7 @@ Background="Transparent" WindowStyle="None">
                 <TextBlock Text="Employee ID:  " Grid.Row="0" Style="{StaticResource DefaultTextBlock}"/>
                 <TextBox Grid.Row="1" x:Name="idTxtBox" Text="001" Style="{StaticResource LoginTextBox}"/>
                 <TextBlock Text="Date: " Grid.Row="2" Style="{StaticResource DefaultTextBlock}"/>
-                <DatePicker Grid.Row="3"/>
+                <DatePicker Grid.Row="3" x:Name="datee"/>
                 <TextBlock Text="Status:" Grid.Row="4" Style="{StaticResource DefaultTextBlock}"/>
                 <TextBox  Grid.Row="5" x:Name="statusTxtBx" Text="100 Marks" Style="{StaticResource LoginTextBox}"/>
 

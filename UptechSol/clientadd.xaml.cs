@@ -30,6 +30,7 @@ namespace UptechSol
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
+
             MessageBox.Show("added");
         }
     }

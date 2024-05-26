@@ -23,17 +23,26 @@ namespace UptechSol
     {
         public adminAttendence()
         {
-            InitializeComponent(); string connStr = "server=localhost;user=root;database=sakila;port=3306;password=qwerty@123";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            InitializeComponent();
+            string connStr = "server=localhost;user=root;database=uptechsol;port=3306;password=qwerty@123";
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connStr);
 
-            conn.Open();
-            string sql = "SELECT customer_id as ID,first_name as FirstName,last_name as LastName,email as Email from customer";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            DataTable dt = new DataTable();
-            dt.Load(cmd.ExecuteReader());
+                conn.Open();
+                string sql = "SELECT e.idEmployee AS EmployeeID,e.Name AS EmployeeName,a.Date AS AttendanceDate,a.Status AS AttendanceStatus FROM Employee e INNER JOIN Attendance a ON e.idEmployee = a.Employee_idEmployee;\r\n";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
 
-            conn.Close();
-            membersDataGrid.DataContext = dt;
+                conn.Close();
+                membersDataGrid.DataContext = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot retrieve a data from database");
+            }
         }
         /*
         private bool IsMaximize = false;
